@@ -1,0 +1,7 @@
+
+.wrap.bg-image
+  {
+  background-image:url('{{ STATIC_URL }}landing/img/bg_pattern.svg');
+  background-repeat:no-repeat;
+  background-size:100%;
+  }

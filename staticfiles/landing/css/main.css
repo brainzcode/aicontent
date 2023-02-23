@@ -1,13 +1,13 @@
 
 .wrap.bg-image
   {
-  background-image:url('/landing/img/bg_pattern.svg');
+  background-image:url('/staticfiles/landing/img/bg_pattern.svg');
   background-repeat:no-repeat;
   background-size:100%;
   }
 
   .page-footer.bg-image {
-    background-image: url('staticfiles/landing/img/world_pattern.svg');
+    background-image: url('/static/landing/img/world_pattern.svg');
     background-repeat:no-repeat;
     background-size:100%;
   }

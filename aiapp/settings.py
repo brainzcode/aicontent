@@ -17,9 +17,9 @@ SECRET_KEY = 'django-insecure-llux4u$zwl0c1&hg&d!@%$pi%)wvgp(vfpwbpvy#yz0wsfz^_0
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['100.24.205.119', 'localhost', '0.0.0.0',]
-CSRF_TRUSTED_ORIGINS = ['http://100.24.205.119',
-                        'http://100.26.250.233/admin/login/?next=/admin/',]
+ALLOWED_HOSTS = ['34.226.69.87', 'localhost', '0.0.0.0',]
+CSRF_TRUSTED_ORIGINS = ['http://34.226.69.87',
+                        'http://34.226.69.87/admin/login/?next=/admin/',]
 
 MESSAGE_TAGS = {
     messages.DEBUG: 'info',
@@ -129,7 +129,7 @@ DJANGORESIZED_DEFAULT_FORMAT_EXTENSIONS = {'PNG': ".png"}
 
 
 CORS_ALLOWED_ORIGINS = [
-    'http://100.24.205.119',
+    'http://34.226.69.87',
     'http://localhost:8000',
     'http://127.0.0.1:8000',
 ]
@@ -138,12 +138,12 @@ CORS_ALLOWED_ORIGINS = [
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-STATIC_URL = '/staticfiles/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_URL = '/static/'
 
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'staticfiles'),
-)
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
 MEDIA_URL = '/uploads/'

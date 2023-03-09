@@ -8,5 +8,5 @@ def home(request):
     return render(request, 'ai/index.html', {})
 
 
-def about(request):
-    return render(request, 'ai/about.html', {})
+def pricing(request):
+    return render(request, 'ai/pricing.html', {})

@@ -11,10 +11,10 @@ def login(request):
 def register(request):
 
     if request.method == 'POST':
-        username = request.POST['username']
+        email = request.POST['email']
         password = request.POST['password']
 
-        print('Username submitted was: {}'.format(username))
+        print('Username submitted was: {}'.format(email))
 
         return redirect('register')
     return render(request, 'authorization/register.html', {})

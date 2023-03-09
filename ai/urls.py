@@ -3,5 +3,5 @@ from .views import home, pricing
 
 urlpatterns = [
     path('', home, name='home-page'),
-    path('pricing-ai-content', pricing, name='pricing'),
+    path('ai-content-pricing', pricing, name='pricing'),
 ]

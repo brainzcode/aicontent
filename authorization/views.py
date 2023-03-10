@@ -29,6 +29,7 @@ def register(request):
         newUser = User.objects.create_user(
             email=email, username=email, password=password2)
         newUser.save()
+        messages.success(request, 'Registration Successful!')
 
         auth.login(request, newUser)
         return redirect('home-page')

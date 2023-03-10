@@ -14,6 +14,12 @@
       <div id="message" class="container">
         <div class="alert alert-{{ message.tags }} alert-dismissible mb-4" role="alert">
           Error: <strong>{{ message }}</strong>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
       </div>
 {% endfor %}
+
+<!-- <div class="alert alert-danger alert-dismissible" role="alert">
+  This is a danger dismissible alert — check it out!
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div> -->

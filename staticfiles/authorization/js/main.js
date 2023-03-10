@@ -117,6 +117,3 @@ let menu, animate;
   window.Helpers.setCollapsed(true, false);
 })();
 
-setTimeout(function(){
-  $('#message').fadeOut('slow')
-}, 2000);

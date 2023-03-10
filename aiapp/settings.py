@@ -1,6 +1,6 @@
 
 from pathlib import Path
-from django.contrib import messages
+from django.contrib.messages import constants as messages
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.

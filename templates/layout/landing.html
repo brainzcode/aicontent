@@ -51,9 +51,15 @@
             <li class="nav-item">
               <a class="nav-link" href="#">Contact</a>
             </li>
+            {% if user.is_authenticated %}
+            <li class="nav-item">
+              <a class="btn btn-primary ml-lg-2" href="{% url 'home-page' %}">Dashboard</a>
+            </li>
+            {% else %}
             <li class="nav-item">
               <a class="btn btn-primary ml-lg-2" href="{% url 'register' %}">Register</a>
             </li>
+            {% endif %}
           </ul>
         </div>
 

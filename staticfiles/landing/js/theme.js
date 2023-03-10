@@ -101,3 +101,7 @@ $('document').ready(function() {
   new WOW().init();
 });
 
+
+setTimeout(function(){
+  $('#message').fadeOut('slow')
+}, 2000);

@@ -69,13 +69,6 @@
     <!-- Content -->
 
 
-    {% for message in messages %}
-      <div id="message" class="container">
-        <div class="alert alert-{{ message.tags }} alert-dismissible mb-4" role="alert">
-          <strong>{{ message }}</strong>
-        </div>
-      </div>
-    {% endfor %}
 
     {% block authcontent %}
 

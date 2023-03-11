@@ -7,6 +7,22 @@ from django.contrib import messages
 
 
 def login(request):
+
+    if request.method == 'POST':
+        email = request.POST['email'].replace(' ', '').lower()
+        password = request.POST['password']
+
+        user = auth.authenticate(username=email, password=password)
+
+        if user:
+            # login user
+            auth.login(request, user)
+            return redirect(request, 'home')
+        else:
+            messages.error(
+                request, 'Invalid Credentials or User does not Exist!')
+            return redirect('register')
+
     return render(request, 'authorization/login.html', {})
 
 

@@ -17,7 +17,7 @@ def login(request):
         if user:
             # login user
             auth.login(request, user)
-            return redirect('home')
+            return redirect('home-page')
         else:
             messages.error(
                 request, 'Invalid Credentials or User does not Exist!')

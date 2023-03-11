@@ -42,12 +42,12 @@ def register(request):
                 request, 'A user with the email address: {} already exists, please use a different email'.format(email))
             return redirect('register')
 
-        newUser = User.objects.create_user(
+        user = User.objects.create_user(
             email=email, username=email, password=password2)
-        newUser.save()
+        user.save()
         messages.success(request, 'Registration Successful!')
 
-        auth.login(request, newUser)
+        auth.login(request, user)
         return redirect('home-page')
 
     return render(request, 'authorization/register.html', {})

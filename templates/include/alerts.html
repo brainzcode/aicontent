@@ -1,14 +1,4 @@
-<!-- {% if messages %}
-{% for message in messages %}
-  <div id="message" class="container">
-    <div{% if message.tags %} class="alert alert-{{ message.tags }}"{% endif %} role="alert">
-      <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times</span></button>
-        {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}Error: {% endif %}
-        {{ message }}
-    </div>
-  </div>
-    {% endfor %}
-{% endif %} -->
+
 
 {% for message in messages %}
       <div id="message" class="container">
@@ -18,8 +8,3 @@
         </div>
       </div>
 {% endfor %}
-
-<!-- <div class="alert alert-danger alert-dismissible" role="alert">
-  This is a danger dismissible alert — check it out!
-  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-</div> -->

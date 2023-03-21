@@ -17,7 +17,7 @@
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
 
-    <title>Fluid - Layouts | Sneat - Bootstrap 5 HTML Admin Template - Pro</title>
+    <title>AI.Content</title>
 
     <meta name="description" content="" />
 
@@ -98,7 +98,7 @@
             </li>
 
             <li class="menu-item">
-              <a href="#" class="menu-link">
+              <a href="{% url 'logout' %}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-home-circle"></i>
                 <div data-i18n="Analytics">Logout</div>
               </a>
@@ -180,7 +180,7 @@
                       <div class="dropdown-divider"></div>
                     </li>
                     <li>
-                      <a class="dropdown-item" href="#">
+                      <a class="dropdown-item" href="{% url 'logout' %}">
                         <i class="bx bx-power-off me-2"></i>
                         <span class="align-middle">Log Out</span>
                       </a>
@@ -196,14 +196,11 @@
 
           <!-- Content wrapper -->
           <div class="content-wrapper">
-            <!-- Content -->
 
-            <div class="container-fluid flex-grow-1 container-p-y">
+            {% block dashboard %}
 
-                <h1>Welcome to <a href="#" class="navbar-brand">AI.<span class="text-primary">Content</span></a> Dashboard 😁</h1>
-              </div>
 
-            <!-- / Content -->
+            {% endblock %}
 
             <!-- Footer -->
             <footer class="content-footer footer bg-footer-theme">
@@ -212,7 +209,7 @@
                   ©
                   {% now "Y" %}
                   , made with ❤️ by
-                  <a href="https://brainzcode.io" target="_blank" class="footer-link fw-bolder">brainzcode</a>
+                  <a href="https://brainzcode.io" target="_blank" class="footer-link fw-bolder">Brainzcode Digital Agency</a>
                 </div>
               </div>
             </footer>

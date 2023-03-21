@@ -1,11 +1,25 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
 from django.contrib.auth.models import User, auth
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required, user_passes_test
 
-# Create your views here.
+
+def anonymous_required(function=None, redirect_url=None):
+
+    if not redirect_url:
+        redirect_url = 'dashboard'
+
+        actual_decorator = user_passes_test(
+            lambda u: u.is_anonymous,
+            login_url=redirect_url
+        )
+
+        if function:
+            return actual_decorator(function)
+        return actual_decorator
 
 
+@anonymous_required
 def login(request):
 
     if request.method == 'POST':
@@ -17,7 +31,7 @@ def login(request):
         if user:
             # login user
             auth.login(request, user)
-            return redirect('home-page')
+            return redirect('dashboard')
         else:
             messages.error(
                 request, 'Invalid Credentials or User does not Exist!')
@@ -26,6 +40,7 @@ def login(request):
     return render(request, 'authorization/login.html', {})
 
 
+@anonymous_required
 def register(request):
 
     if request.method == 'POST':
@@ -48,6 +63,12 @@ def register(request):
         messages.success(request, 'Registration Successful!')
 
         auth.login(request, user)
-        return redirect('home-page')
+        return redirect('dashboard')
 
     return render(request, 'authorization/register.html', {})
+
+
+@login_required
+def logout(request):
+    auth.logout(request)
+    return redirect('home-page')

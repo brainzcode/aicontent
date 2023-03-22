@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'ai',
     'authorization',
+    'dashboard',
+    'phonenumber_field',
 ]
 
 MIDDLEWARE = [
@@ -153,6 +155,8 @@ MEDIA_URL = '/uploads/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+PHONENUMBER_DEFAULT_REGION = "US"
 
 
 # SECURE_BROWSER_XSS_FILTER = True

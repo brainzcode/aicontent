@@ -1,20 +1,20 @@
 from django import forms
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Layout, Submit, Row, Column
-from phonenumber_field.widgets import PhoneNumberPrefixWidget
+# from phonenumber_field.widgets import PhoneNumberPrefixWidget
 from django_countries.fields import CountryField
 from .models import *
 
 
-class ContactForm(forms.Form):
-    class Meta:
-        widgets = {
-            'phone': PhoneNumberPrefixWidget(initial='US'),
-        }
+# class ContactForm(forms.ModelForm):
+#     class Meta:
+#         widgets = {
+#             'phone': PhoneNumberPrefixWidget(initial='US'),
+#         }
 
 
-class ProfileForm(forms.Form):
-    phone = ContactForm
+class ProfileForm(forms.ModelForm):
+    # phone = ContactForm
     addressLine1 = forms.CharField(
         required=True,
         label='Address Line 1',
@@ -53,13 +53,11 @@ class ProfileForm(forms.Form):
                 Column('countries', css_class='form-group col-md-6'),
                 Column('zipCode', css_class='form-group col-md-6')
             ),
-            Row(
-                Column('phone', css_class='form-group col-md-6'),
-            ),
-            Submit('submit', 'Save Changes', css_class='btn btn primary me-2')
+            Submit('submit', 'Save Changes',
+                   css_class='btn btn primary me-2 mb-3')
         )
 
     class Meta:
         model = Profile
         fields = ['addressLine1', 'addressLine2',
-                  'city', 'state', 'countries', 'zipCode', 'phone']
+                  'city', 'state', 'countries', 'zipCode']

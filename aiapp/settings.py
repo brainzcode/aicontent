@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'dashboard',
     'phonenumber_field',
     'django_countries',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [

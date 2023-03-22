@@ -33,7 +33,7 @@ class ProfileForm(forms.Form):
     countries = CountryField().formfield()
     zipCode = forms.CharField(
         required=True,
-        label='State',
+        label='Zip Code',
         widget=forms.TextInput(attrs={'class': 'form-control mb-3', 'placeholder': 'Enter Your State'}))
     phone_number = ContactForm
 
@@ -43,7 +43,7 @@ class ProfileForm(forms.Form):
         self.helper.layout = Layout(
             Row(
                 Column('addressLine1', css_class='form-group col-md-6'),
-                Column('addressLine1', css_class='form-group col-md-6')
+                Column('addressLine2', css_class='form-group col-md-6')
             ),
             Row(
                 Column('city', css_class='form-group col-md-6'),

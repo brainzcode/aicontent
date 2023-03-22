@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'authorization',
     'dashboard',
     'phonenumber_field',
+    'django_countries',
 ]
 
 MIDDLEWARE = [

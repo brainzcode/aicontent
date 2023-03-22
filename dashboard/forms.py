@@ -9,12 +9,12 @@ from .models import *
 class ContactForm(forms.ModelForm):
     class Meta:
         widgets = {
-            'phone_number': PhoneNumberPrefixWidget(initial='US'),
+            'phone': PhoneNumberPrefixWidget(initial='US'),
         }
 
 
 class ProfileForm(forms.Form):
-    phone_number = ContactForm
+    phone = ContactForm
     addressLine1 = forms.CharField(
         required=True,
         label='Address Line 1',
@@ -54,8 +54,7 @@ class ProfileForm(forms.Form):
                 Column('zipCode', css_class='form-group col-md-6')
             ),
             Row(
-                Column('phone_number', css_class='form-group col-md-6'),
-                Column('countries', css_class='form-group col-md-6')
+                Column('phone', css_class='form-group col-md-6'),
             ),
             Submit('submit', 'Save Changes', css_class='btn btn primary me-2')
         )
@@ -63,4 +62,4 @@ class ProfileForm(forms.Form):
     class Meta:
         model = Profile
         fields = ['addressLine1', 'addressLine2',
-                  'city', 'state', 'countries', 'zipCode', 'phone_number']
+                  'city', 'state', 'countries', 'zipCode', 'phone']

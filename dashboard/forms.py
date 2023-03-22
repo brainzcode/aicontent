@@ -6,7 +6,7 @@ from django_countries.fields import CountryField
 from .models import *
 
 
-class ContactForm(forms.ModelForm):
+class ContactForm(forms.Form):
     class Meta:
         widgets = {
             'phone': PhoneNumberPrefixWidget(initial='US'),

@@ -14,6 +14,7 @@ class ContactForm(forms.ModelForm):
 
 
 class ProfileForm(forms.Form):
+    phone_number = ContactForm
     addressLine1 = forms.CharField(
         required=True,
         label='Address Line 1',
@@ -35,7 +36,6 @@ class ProfileForm(forms.Form):
         required=True,
         label='Zip Code',
         widget=forms.TextInput(attrs={'class': 'form-control mb-3', 'placeholder': 'Enter Your State'}))
-    phone_number = ContactForm
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -54,7 +54,8 @@ class ProfileForm(forms.Form):
                 Column('zipCode', css_class='form-group col-md-6')
             ),
             Row(
-                Column('phone_number', css_class='form-group col-md-6')
+                Column('phone_number', css_class='form-group col-md-6'),
+                Column('countries', css_class='form-group col-md-6')
             ),
             Submit('submit', 'Save Changes', css_class='btn btn primary me-2')
         )

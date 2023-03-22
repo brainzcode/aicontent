@@ -9,7 +9,7 @@ from .models import *
 class ContactForm(forms.ModelForm):
     class Meta:
         widgets = {
-            'phone': PhoneNumberPrefixWidget(initial='US'),
+            'phone_number': PhoneNumberPrefixWidget(initial='US'),
         }
 
 

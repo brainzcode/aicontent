@@ -32,8 +32,8 @@ class Profile(models.Model):
     def __str__(self):
         return '{} {} {}'.format(self.user.first_name, self.user.last_name, self.user.email)
 
-    def get_absolute_url(self):
-        return reverse('profile-detail', kwargs={'slug': self.slug})
+    # def get_absolute_url(self):
+    #     return reverse('profile-detail', kwargs={'slug': self.slug})
 
     def save(self, *args, **kwargs):
         if self.created_at is None:

@@ -17,7 +17,8 @@ SECRET_KEY = 'django-insecure-llux4u$zwl0c1&hg&d!@%$pi%)wvgp(vfpwbpvy#yz0wsfz^_0
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['34.226.69.87', 'localhost', '0.0.0.0',]
+ALLOWED_HOSTS = ['34.226.69.87', 'localhost',
+                 '0.0.0.0', '127.0.0.1',]
 CSRF_TRUSTED_ORIGINS = ['http://34.226.69.87',
                         'http://34.226.69.87/admin/login/?next=/admin/',]
 
@@ -87,14 +88,21 @@ WSGI_APPLICATION = 'aiapp.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'brainzai',
-        'USER': 'brainzaiuser',
-        'PASSWORD': 'Fred@1950$1950',
-        'HOST': 'localhost',
-        'PORT': '',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'brainzai',
+#         'USER': 'brainzaiuser',
+#         'PASSWORD': 'Fred@1950$1950',
+#         'HOST': 'localhost',
+#         'PORT': '',
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
@@ -142,6 +150,7 @@ CORS_ALLOWED_ORIGINS = [
     'http://34.226.69.87',
     'http://localhost:8000',
     'http://127.0.0.1:8000',
+    'http://127.0.0.1:9000/'
 ]
 
 

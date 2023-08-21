@@ -1,0 +1,61 @@
+{% extends 'layout/dashboard.html' %}
+{% load static %}
+
+
+{% block dashboard %}
+<!-- Content -->
+
+<div class="container-fluid flex-grow-1 container-p-y">
+	<div class="layout-demo-wrapper">
+		<div class="row">
+            <div class="col-lg-1"></div>
+            <div class="col-lg-12 mt-5">
+                <form action="" method="POST">
+                    {% csrf_token %}
+                <div class="row">
+                    <div class="col-lg-7">
+                        <h2 class="mb-3">Here are the generated Blog Topic Ideas 💥🚀</h2>
+
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Select</th>
+                                        <th>Topic</th>
+                                    </tr>
+                                </thead>
+    
+                                <tbody>
+                                    {% for section in blogSections %}
+                                    <tr>
+                                        <td>
+                                            <div class="form-check form-switch mb-2">
+                                                <input class="form-check-input" type="checkbox" name="{{ section }}" id="{{ section }}">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            {{ section }}
+                                        </td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-lg-5">
+
+                            <figure class="col-lg-12">
+                                <img class="img-fluid" src="{% static 'admin/img/bg_blog.svg' %}" alt="create blog">
+                            </figure>
+                            <div class="mt-5 block">
+                                <button class="col-lg-12 btn btn-primary" type="submit">Generate Full Blog</button>
+        
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+	</div>
+</div>
+
+<!-- / Content -->
+{% endblock %}

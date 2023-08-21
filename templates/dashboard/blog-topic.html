@@ -1,0 +1,72 @@
+{% extends 'layout/dashboard.html' %}
+{% load static %}
+
+
+{% block dashboard %}
+<!-- Content -->
+
+<div class="container-fluid flex-grow-1 container-p-y">
+	<div class="layout-demo-wrapper">
+		<div class="row">
+            <div class="col-lg-1"></div>
+            <div class="col-lg-10 mt-5">
+                <div class="row mt-5">
+                    <figure class="col-lg-6">
+                        <img class="img-fluid" src="{% static 'admin/img/bg_blog.svg' %}" alt="create blog">
+                    </figure>
+                    <div class="col-lg-6">
+                        <h2 class="mb-3">Enter your blog Idea below to Generate blog topic suggestions.</h2>
+
+                        {% include 'include/alerts.html' %}
+                        <form action="" method="POST">
+                            {% csrf_token %}
+
+                            <div class="mb-3">
+                                <label for="blogIdea" class="form-label">Blog Idea</label>
+                                <input
+                                  type="text"
+                                  class="form-control"
+                                  id="blogIdea"
+                                  name="blogIdea"
+                                  placeholder="Type in your blog Idea 😊"
+                                  autofocus
+                                  required
+                                />
+                            </div>
+                            <div class="mb-3">
+                                <label for="audience" class="form-label">Audience</label>
+                                <input
+                                  type="text"
+                                  class="form-control"
+                                  id="audience"
+                                  name="audience"
+                                  placeholder="Enter Target Audience 😊"
+                                  autofocus
+                                  required
+                                />
+                            </div>
+                            <div class="mb-3">
+                                <label for="keywords" class="form-label">Keywords</label>
+                                <input
+                                  type="text"
+                                  class="form-control"
+                                  id="keywords"
+                                  name="keywords"
+                                  placeholder="Enter your blog keywords 😊"
+                                  required
+                                />
+                            </div>
+
+                            <div class="mb-3">
+                                <button class="btn btn-primary d-grid w-100" type="submit">Generate Blog Topic Ideas</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+	</div>
+</div>
+
+<!-- / Content -->
+{% endblock %}

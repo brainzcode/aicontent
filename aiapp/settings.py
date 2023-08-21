@@ -43,7 +43,6 @@ INSTALLED_APPS = [
     'authorization',
     'dashboard',
     'phonenumber_field',
-    'django_countries',
     'crispy_forms',
     'crispy_bootstrap5',
 ]
@@ -137,6 +136,7 @@ USE_TZ = True
 
 # LOGIN_REDIRECT_URL = 'dashboard'
 LOGIN_URL = 'login'
+OPENAI_API_KEY = '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'
 
 
 DJANGORESIZED_DEFAULT_SIZE = [500, 500]

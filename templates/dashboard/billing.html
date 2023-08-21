@@ -1,0 +1,75 @@
+{% extends 'layout/dashboard.html' %}
+
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block dashboard %}
+
+  <!-- Content wrapper -->
+  <div class="content-wrapper">
+    <!-- Content -->
+
+    <div class="container-xxl flex-grow-1 container-p-y">
+      <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Account Settings /</span> Billing</h4>
+
+      <div class="row">
+        <div class="col-md-12">
+          <ul class="nav nav-pills flex-column flex-md-row mb-3">
+            <li class="nav-item">
+              <a class="nav-link active" href="#"><i class="bx bx-credit-card me-1"></i> Billing</a>
+            </li>
+
+            <!-- <li class="nav-item">
+              <a class="nav-link" href="pages-account-settings-notifications.html"
+                ><i class="bx bx-bell me-1"></i> Notifications</a
+              >
+            </li> -->
+
+          </ul>
+
+          <div class="card">
+            <h5 class="card-header">Billing Information</h5>
+            <div class="card-body">
+              <div class="mb-3 col-12 mb-0">
+
+                {% if user.profile.subscriptionType == 'free' %}
+                <div class="alert alert-warning">
+                  <h6 class="alert-heading fw-bold mb-1">You are currently on the Free Plan</h6>
+                  <p class="mb-0">You can cancel your subscription at anytime. Upgrade to the Starter Plan to get up to 40,000 words per month.</p>
+                </div>
+
+                <button type="button" class="btn btn-primary">
+                    <i class='bx bx-money'></i> Upgrade Subscription
+                </button>
+
+                {% elif user.profile.subscriptionType == 'starter' %}
+                <div class="alert alert-info">
+                    <h6 class="alert-heading fw-bold mb-1">You are currently on the Starter Plan</h6>
+                    <p class="mb-0">You can cancel your subscription at anytime. Upgrade to the Advanced Plan to get unlimited words per month.</p>
+                  </div>
+  
+                  <button type="button" class="btn btn-primary">
+                      <i class='bx bx-money'></i> Upgrade Subscription
+                  </button>
+
+                {% elif user.profile.subscriptionType == 'advance' %}
+                <div class="alert alert-success">
+                    <h6 class="alert-heading fw-bold mb-1">You are currently on the Advanced Plan</h6>
+                    <p class="mb-0">You can cancel your subscription at anytime. You have unlimited words per month.</p>
+                  </div>
+
+                {% else %}
+                <h1>Something Went Wrong</h1>
+                <a href="{% url 'dashboard' %}" class="btn btn-primary">Visit HomePage</a>
+
+                {% endif %}
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- / Content -->
+
+{% endblock %}

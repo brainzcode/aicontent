@@ -1,0 +1,29 @@
+{% extends 'layout/dashboard.html' %}
+{% load static %}
+
+
+{% block dashboard %}
+<!-- Content -->
+
+<div class="container-fluid flex-grow-1 container-p-y">
+	<div class="layout-demo-wrapper">
+		<div class="row">
+            <div class="col-lg-1"></div>
+            <div class="col-lg-10 mt-5">
+                <h2 class="mb-4">Yayyy💃🏻🕺🏻 Your Blog is Ready</h2>
+                <h3 class="mb-3">{{ blog.title }}💥🚀</h3>
+                <h5><span class="badge bg-primary">{{ blog.keywords }}</span></h5>
+
+                {% for section in blogSections %}
+                    <div class="mt-3">
+                        <h4>{{ section.title }}</h4>
+                        <p class="mt-3">{{ section.body|safe }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+	</div>
+</div>
+
+<!-- / Content -->
+{% endblock %}
